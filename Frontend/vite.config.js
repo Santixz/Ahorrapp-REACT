@@ -1,10 +1,11 @@
 // vite.config.js
 
-import { defineConfig } from "vite";   // Importa la función de configuración de Vite
+import { defineConfig } from "vite"; 
+import tailwindcss from "@tailwindcss/vite";  // Importa la función de configuración de Vite
 import react from "@vitejs/plugin-react"; // Importa el plugin de React para Vite
 
 export default defineConfig({
-  plugins: [react()], // Le dice a Vite que este proyecto usa React
+  plugins: [react(), tailwindcss()], // Le dice a Vite que este proyecto usa React
 
   server: {
     // Esta sección configura el servidor de desarrollo local

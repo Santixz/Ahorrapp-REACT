@@ -1,5 +1,3 @@
-import '../styles/vista.css'
-
 export default function EmailConfirmacion() {
   return (
     <div>
