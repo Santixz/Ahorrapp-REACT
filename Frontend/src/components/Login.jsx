@@ -30,16 +30,16 @@ export default function Login() {
 
   // Estado del formulario de login
   const [loginForm, setLoginForm] = useState({
-    Email: "",
-    Password_hash: "",
+    correo: "",
+    password: "",
   });
 
   // Estado del formulario de registro
   const [registerForm, setRegisterForm] = useState({
-    Nombre: "",
-    Apellido: "",
-    Email: "",
-    Password_hash: "",
+    nombre: "",
+    apellido: "",
+    correo: "",
+    password: "",
   });
 
   // ── Handlers de login ──────────────────────────────────────────────────
@@ -51,7 +51,7 @@ export default function Login() {
     e.preventDefault();
     setError(null);
 
-    if (!loginForm.Email || !loginForm.Password_hash) {
+    if (!loginForm.correo || !loginForm.password) {
       setError("Por favor completa todos los campos");
       return;
     }
@@ -60,8 +60,8 @@ export default function Login() {
 
     try {
       const respuesta = await loginUser({
-        Email: loginForm.Email,
-        Password_hash: loginForm.Password_hash,
+        correo: loginForm.correo,
+        password: loginForm.password,
       });
 
       if (respuesta.ok) {
@@ -90,10 +90,10 @@ export default function Login() {
     setCargando(true);
 
     if (
-      !registerForm.Nombre ||
-      !registerForm.Apellido ||
-      !registerForm.Email ||
-      !registerForm.Password_hash
+      !registerForm.nombre ||
+      !registerForm.apellido ||
+      !registerForm.correo ||
+      !registerForm.password
     ) {
       setError("Todos los campos son obligatorios");
       setCargando(false);
@@ -172,18 +172,18 @@ export default function Login() {
                     id="login-email"
                     label="Correo electrónico"
                     type="email"
-                    name="Email"
+                    name="correo"
                     placeholder="juan@correo.com"
-                    value={loginForm.Email}
+                    value={loginForm.correo}
                     onChange={handleLoginChange}
                   />
                   <Field
                     id="login-password"
                     label="Contraseña"
                     type="password"
-                    name="Password_hash"
+                    name="password"
                     placeholder="••••••••"
-                    value={loginForm.Password_hash}
+                    value={loginForm.password}
                     onChange={handleLoginChange}
                   />
 
@@ -249,9 +249,9 @@ export default function Login() {
                         id="nombre"
                         label="Nombre"
                         type="text"
-                        name="Nombre"
+                        name="nombre"
                         placeholder="Juan"
-                        value={registerForm.Nombre}
+                        value={registerForm.nombre}
                         onChange={handleRegisterChange}
                       />
                     </div>
@@ -260,9 +260,9 @@ export default function Login() {
                         id="apellido"
                         label="Apellido"
                         type="text"
-                        name="Apellido"
+                        name="apellido"
                         placeholder="García"
-                        value={registerForm.Apellido}
+                        value={registerForm.apellido}
                         onChange={handleRegisterChange}
                       />
                     </div>
@@ -272,18 +272,18 @@ export default function Login() {
                     id="reg-email"
                     label="Correo electrónico"
                     type="email"
-                    name="Email"
+                    name="correo"
                     placeholder="tu@correo.com"
-                    value={registerForm.Email}
+                    value={registerForm.correo}
                     onChange={handleRegisterChange}
                   />
                   <Field
                     id="reg-password"
                     label="Contraseña"
                     type="password"
-                    name="Password_hash"
+                    name="password"
                     placeholder="Mínimo 6 caracteres"
-                    value={registerForm.Password_hash}
+                    value={registerForm.password}
                     onChange={handleRegisterChange}
                   />
 
