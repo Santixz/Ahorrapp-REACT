@@ -7,10 +7,6 @@ export default defineConfig({
   server: {
     host: `localhost`,
     port: 5173,
-    https: {
-      key: fs.readFileSync('certs/private.key'),
-      cert: fs.readFileSync('certs/certificate.crt'),
-    },
     proxy: {
       "/api": {
         target: "https://ahorrapp-react-pkj9.onrender.com",
