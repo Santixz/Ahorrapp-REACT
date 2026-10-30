@@ -4,6 +4,7 @@ import fs from 'fs';
 
 export default defineConfig({
   plugins: [react()], 
+  base: '/Ahorrapp-REACT/',
   server: {
     host: `localhost`,
     port: 5173,
